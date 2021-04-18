@@ -42,7 +42,7 @@ void loop() {
     }
     delay(500);
   }                         */
-/*  for(int i=0; i<Pin_num; i++)
+  for(int i=0; i<Pin_num; i++)
   {
     for(int j=0; j<Pin_num; j++)
     {
@@ -52,8 +52,19 @@ void loop() {
       digitalWrite(Pin[j], LOW);
     }
     delay(500);
-  }                               */
-  static int loc = 0;
+  }                               
+  for(int i=0; i<Pin_num; i++)
+  {
+    for(int j=0; j<Pin_num; j++)
+    {
+      if(i==j)
+      digitalWrite(Pin[Pin_num - j], HIGH);
+      else
+      digitalWrite(Pin[Pin_num - j], LOW);
+    }
+    delay(500);
+  }
+/*static int loc = 0;
   for(int i=0; i<Pin_num; i++)
   {
       digitalWrite(Pin[i], LOW);
@@ -61,7 +72,7 @@ void loop() {
     digitalWrite(Pin[loc], HIGH);
     loc++;
     loc %= 8;
-    delay(500);
+    delay(500);                   */
 //좌우로 이동하며 점멸
 //0~15 이진값 표현
   int sw_in;
